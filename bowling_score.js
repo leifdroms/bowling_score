@@ -1,6 +1,6 @@
 // assumes input is as space separate list of rolls,
 // except when there's a spare or gutter ball
-const rolls = 'X X X X X X X X X X X X';
+let bowling_score = function(rolls) {
 const rollArr = rolls.replace(/\s/g, '').split('');
 
 let i = 0;
@@ -81,7 +81,9 @@ return parseInt(roll);
  * Pushes non-strike, non-spare pins to frames array
  */
 function normalScore() {
-frames.push([rollArr[i], rollArr[i+1]]);
+if(rollArr[i]) {
+frames.push([rollArr[i], rollArr[i+1]])
+};
 i+=2;
 frame++;
 }
@@ -167,9 +169,10 @@ score.gameType = 'Complete Game';
 let outcome = `Game Type: ${score.gameType} 
 Last Frame: ${score.lastFrame} 
 Score: ${score.score}`;
-console.log(outcome);
 return score;
 /** Notes
 1. I tried to reduce the amount of conditional logic
 using a hashmap for score values
 **/
+}
+module.exports = bowling_score;

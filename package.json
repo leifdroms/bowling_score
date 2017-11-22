@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "bowling score calculator",
   "scripts": {
-    "test": "node bowling_score.js"
+    "test": "./node_modules/mocha/bin/mocha test/bowling_score_test.js"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
   }
 }
