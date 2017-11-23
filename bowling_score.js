@@ -120,6 +120,11 @@ validGame = false;
 // assign score
 rollArr[i] == 'X' ? strikeScore() :
 rollArr[i+1] == '/' ? spareScore() : normalScore();
+// check for additonal frames
+let lastFrame = rollArr.slice(i,rollArr.length)
+if(frame == endFrame && lastFrame.length > 3){
+endFrame++;
+}
 }
 
 // handle last frame
