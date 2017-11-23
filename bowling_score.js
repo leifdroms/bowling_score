@@ -106,7 +106,7 @@ return score;
 }
 
 // handle all frames up to frame 10
-while (frame < endFrame && validGame) {
+while (frame < endFrame) {
 // break out of terminal loop if partial game
 if (!rollArr[i]) {
 endFrame = frame;
@@ -128,7 +128,7 @@ if (rollArr[i]) {
 frames.push([]);
 }
 
-while (i < rollArr.length && validGame) {
+while (i < rollArr.length) {
 // detect invalid last frame
 if ((parseInt(rollArr[i]) + parseInt(rollArr[i+1])) > 9) {
 validGame = false;
@@ -170,9 +170,5 @@ let outcome = `Game Type: ${score.gameType}
 Last Frame: ${score.lastFrame} 
 Score: ${score.score}`;
 return score;
-/** Notes
-1. I tried to reduce the amount of conditional logic
-using a hashmap for score values
-**/
 }
 module.exports = bowling_score;
