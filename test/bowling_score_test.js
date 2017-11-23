@@ -58,12 +58,12 @@ describe('Partial Game - Mixture of Strikes, Spares, and Regular rolls', functio
 });
 
 describe('Invalid Game - Too many rolls. Input: \'X 8 1 3 4 5 4 X 9- -6 8- 7/ X 8- X\'', function() {
-	it('should give a score of 134, game type as "Invalid Game", and last frame as 10', function() {
+	it('should give a score of 142, game type as "Invalid Game", and last frame as 11', function() {
     let rolls = 'X 8 1 3 4 5 4 X 9- -6 8- 7/ X 8- X'
     let score = bowling_score(rolls)
     assert.equal(score.gameType, 'Invalid Game');
-    assert.equal(score.lastFrame, 10);
-    assert.equal(score.score, 134);
+    assert.equal(score.lastFrame, 11);
+    assert.equal(score.score, 142);
   });
 
 });
